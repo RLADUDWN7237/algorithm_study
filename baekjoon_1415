@@ -4,14 +4,14 @@
 #include <stdlib.h>
 
 
-int* powerset;    //¸èÁıÇÕ
-int answer = 0;   //ÃÖÁ¾»êÃâ¹°
-int n;       //»çÅÁ NÁ¾·ù
-int* input;  //»ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ŞÀº »çÅÁ °¡°İ ÀúÀåÇÒ ¹è¿­ input
+int* powerset;    //ë©±ì§‘í•©
+int answer = 0;   //ìµœì¢…ì‚°ì¶œë¬¼
+int n;       //ì‚¬íƒ• Nì¢…ë¥˜
+int* input;  //ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ë°›ì€ ì‚¬íƒ• ê°€ê²© ì €ì¥í•  ë°°ì—´ input
 int* include;   
 
 
-//ÇÕ°è ±¸ÇÏ´Â ÇÔ¼ö sum
+//í•©ê³„ êµ¬í•˜ëŠ” í•¨ìˆ˜ sum
 double sum(int arr[]) {
 	double total = 0.0;
 	for (int i = 0; i < n; i++) {
@@ -20,7 +20,7 @@ double sum(int arr[]) {
 	return total;
 }
 
-//¸èÁıÇÕ ±¸ÇÏ´Â ÇÔ¼ö 
+//ë©±ì§‘í•© êµ¬í•˜ëŠ” í•¨ìˆ˜ 
 int powerSet(int k) {
 	if (k == n) {
 		for (int i = 0; i < n; i++) {
@@ -39,12 +39,12 @@ int powerSet(int k) {
 }
 
 
-//¼Ò¼ö ÆÇº° ÇÔ¼ö
+//ì†Œìˆ˜ íŒë³„ í•¨ìˆ˜
 int primef(double hap) {
 	int prime = 1;
 	for (int i = 2; i <= (int)sqrt(hap); i++) {
 		if ((int)hap % i == 0) {
-			prime = 0; // ¼Ò¼öÀÌ´Ù.
+			prime = 0; // ì†Œìˆ˜ì´ë‹¤.
 			break;
 		}
 	}
@@ -54,16 +54,16 @@ int primef(double hap) {
 
 int main() {
 	
-	scanf("%d", &n);    //»ç¿ëÀÚ·ÎºÎÅÍ ¿ø¼Ò °¹¼ö ÀÔ·Â¹ŞÀ½
+	scanf("%d", &n);    //ì‚¬ìš©ìë¡œë¶€í„° ì›ì†Œ ê°¯ìˆ˜ ì…ë ¥ë°›ìŒ
 	  
 	powerset = (int*)malloc(sizeof(int) * n);   
 	for (int i = 0; i < n; i++) {
 		powerset[i] = 0;
 	}
 	input = (int*)malloc(sizeof(int) * n);
-	include = (int*)malloc(sizeof(int) * n); //intÇü ¹è¿­ inputÀ» n°³ÀÇ Å©±â·Î ¸¸µê
+	include = (int*)malloc(sizeof(int) * n); //intí˜• ë°°ì—´ inputì„ nê°œì˜ í¬ê¸°ë¡œ ë§Œë“¦
 
-	//for¹® µ¹¸é¼­ »ç¿ëÀÚ ÀÔ·Â°ª input¹è¿­¿¡ ÀúÀå
+	//forë¬¸ ëŒë©´ì„œ ì‚¬ìš©ì ì…ë ¥ê°’ inputë°°ì—´ì— ì €ì¥
 	for (int i = 0; i < n; i++) {
 		scanf("%d", &input[i]);      
 	}
