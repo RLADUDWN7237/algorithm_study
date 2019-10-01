@@ -2,18 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int n;  //»ç¿ëÀÚ·ÎºÎÅÍ °¹¼ö ÀÔ·Â¹ŞÀ½
+int n;  //ì‚¬ìš©ìë¡œë¶€í„° ê°¯ìˆ˜ ì…ë ¥ë°›ìŒ
 int* arr;
 int answer = 0;
 
 
-//ÆÑÅä¸®¾ó ±¸ÇÏ´Â ÇÔ¼ö
+//íŒ©í† ë¦¬ì–¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
 int fact(int n) {
 	if (n == 0) return 1;
 	else return fact(n - 1) * n;
 }
 
-//°°Àº °ÍÀÌ ÀÖ´Â ¼ø¿­ ±¸ÇÏ±â
+//ê°™ì€ ê²ƒì´ ìˆëŠ” ìˆœì—´ êµ¬í•˜ê¸°
 int fact_same(int arr[]) {
 	int sum = arr[0] + arr[1] + arr[2];
 	int fact_num = fact(sum);
@@ -28,7 +28,7 @@ int main() {
 
 	int A[3] = { 0, };
 	
-	scanf("%d", &n);          //»ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ŞÀ» ¼ıÀÚ °¹¼ö ÀÔ·Â¹ŞÀ½
+	scanf("%d", &n);          //ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ë°›ì„ ìˆ«ì ê°¯ìˆ˜ ì…ë ¥ë°›ìŒ
 	arr = (int*)malloc(sizeof(int) * n);
 
 	for (int i = 0; i < n; i++) {
